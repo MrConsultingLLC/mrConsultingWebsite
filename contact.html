@@ -116,32 +116,24 @@
           </div>
         </div>
 
-        <!-- Optional message form. Wire up to a form service or serverless endpoint
-             to make it live; until then it points at the email address. -->
-        <aside class="facts" aria-label="Send a message">
-          <h3 class="mt-0">Send a message</h3>
+        <aside class="facts" aria-label="Email template">
+          <h3 class="mt-0">Not sure what to include?</h3>
           <p style="color:var(--muted);font-size:.95rem;margin-bottom:1.25rem">
-            Prefer to write it out here? Fill this in and it'll open in your email client.
+            A useful first email covers three things. This button opens one in your
+            mail client with the structure already in place — just fill in the blanks.
           </p>
-          <form id="contact-form" action="mailto:michael@mrconsultingco.com?subject=Website%20inquiry" method="post" enctype="text/plain">
-            <label class="visually-hidden" for="cf-name">Your name</label>
-            <input id="cf-name" name="Name" type="text" placeholder="Your name" required
-                   style="width:100%;padding:.75rem .9rem;margin-bottom:.75rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff" />
-
-            <label class="visually-hidden" for="cf-email">Your email</label>
-            <input id="cf-email" name="Email" type="email" placeholder="Your email" required
-                   style="width:100%;padding:.75rem .9rem;margin-bottom:.75rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff" />
-
-            <label class="visually-hidden" for="cf-company">Company</label>
-            <input id="cf-company" name="Company" type="text" placeholder="Company (optional)"
-                   style="width:100%;padding:.75rem .9rem;margin-bottom:.75rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff" />
-
-            <label class="visually-hidden" for="cf-msg">Project details</label>
-            <textarea id="cf-msg" name="Message" rows="5" placeholder="Briefly, what are you building and where is it stuck?" required
-                   style="width:100%;padding:.75rem .9rem;margin-bottom:1rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff;resize:vertical"></textarea>
-
-            <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center">Send message</button>
-          </form>
+          <ul style="list-style:none;padding:0;margin:0 0 1.5rem;color:var(--muted);font-size:.95rem">
+            <li style="padding:.4rem 0;border-bottom:1px solid var(--line)">What you're building</li>
+            <li style="padding:.4rem 0;border-bottom:1px solid var(--line)">Where the project is stuck</li>
+            <li style="padding:.4rem 0">Your rough timeline</li>
+          </ul>
+          <a href="mailto:michael@mrconsultingco.com?subject=Project%20inquiry&amp;body=What%20we're%20building%3A%20%0D%0A%0D%0AWhere%20it's%20stuck%3A%20%0D%0A%0D%0ARough%20timeline%3A%20%0D%0A%0D%0ACompany%3A%20"
+             class="btn btn--primary" style="width:100%;justify-content:center">Open a pre-filled email</a>
+          <p style="color:var(--muted);font-size:.85rem;margin:.9rem 0 0">
+            No mail app set up on this machine? Just write to
+            <a href="mailto:michael@mrconsultingco.com">michael@mrconsultingco.com</a> —
+            the structure above is a suggestion, not a requirement.
+          </p>
         </aside>
       </div>
     </section>
