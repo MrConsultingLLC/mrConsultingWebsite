@@ -68,6 +68,34 @@ p:last-child { margin-bottom: 0; }
 a { color: var(--accent); text-decoration: none; transition: color .15s var(--ease); }
 a:hover { color: var(--accent-dk); }
 
+/* Links inside prose need more than color to stand out (WCAG 1.4.1) */
+main p a:not(.btn) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Visible keyboard focus, with a light ring on dark surfaces */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+.hero :focus-visible, .section--ink :focus-visible, .site-footer :focus-visible {
+  outline-color: #7db8e0;
+}
+
+.skip-link {
+  position: fixed;
+  top: .75rem; left: .75rem;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+  padding: .65rem 1.1rem;
+  border-radius: 8px;
+  transform: translateY(-250%);
+}
+.skip-link:focus { transform: none; }
+
 strong { color: var(--ink-soft); font-weight: 600; }
 
 /* ---------- Layout helpers ---------- */
@@ -115,8 +143,8 @@ strong { color: var(--ink-soft); font-weight: 600; }
 }
 .btn:active { transform: translateY(1px); }
 
-.btn--primary { background: var(--accent); color: #fff; }
-.btn--primary:hover { background: var(--accent-dk); color: #fff; }
+.btn--primary { background: var(--accent-dk); color: #fff; }
+.btn--primary:hover { background: #114a77; color: #fff; }
 
 .btn--ghost {
   background: transparent;
@@ -404,7 +432,7 @@ strong { color: var(--ink-soft); font-weight: 600; }
 .footer-bottom {
   padding-top: 1.5rem; display: flex; flex-wrap: wrap;
   gap: .5rem 1.5rem; justify-content: space-between;
-  font-size: .88rem; color: #6f879e;
+  font-size: .88rem; color: #7f96ac;
 }
 .footer-bottom a { color: #8ba3ba; }
 .footer-bottom a:hover { color: #fff; }

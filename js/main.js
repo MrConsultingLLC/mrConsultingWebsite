@@ -21,9 +21,12 @@
     if (e.target.closest("a")) setOpen(false);
   });
 
-  // Close on Escape, and when resizing back to desktop.
+  // Close on Escape (returning focus to the toggle), and when resizing back to desktop.
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") setOpen(false);
+    if (e.key === "Escape" && links.classList.contains("is-open")) {
+      setOpen(false);
+      toggle.focus();
+    }
   });
   window.addEventListener("resize", function () {
     if (window.innerWidth > 760) setOpen(false);
