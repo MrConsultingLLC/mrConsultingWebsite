@@ -211,6 +211,8 @@ strong { color: var(--ink-soft); font-weight: 600; }
   position: relative;
 }
 .nav-links a:hover { color: var(--ink); }
+/* .nav-links a outranks .btn--primary in the cascade — re-assert button text color */
+.nav-links a.btn--primary, .nav-links a.btn--primary:hover { color: #fff; }
 .nav-links a.is-active { color: var(--ink); font-weight: 600; }
 .nav-links a.is-active::after {
   content: "";
